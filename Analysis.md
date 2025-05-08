@@ -4,10 +4,6 @@
 
 # Editing Page (Admin - Editar Acórdão)
 
-
-
-# Export & Import page (Admin - Editar Acórdão)
-
 ## **Main Technologies**
 
 - **React** (with Next.js for routing and SSR)
@@ -43,6 +39,8 @@
 2. 1. User edits fields; changes are stored in UpdateContext.
 3. 1. On save, sends a PUT request with the changed fields.
 4. 1. On delete, sends a DELETE request.
+
+# Export & Import page (Admin - Editar Acórdão)
 
 ## **API Communication**
 
