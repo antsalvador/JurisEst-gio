@@ -1,5 +1,23 @@
 ## Introduction
 
-The object for this analysis of Juris' data is to detect instances of fields where there is no data normalization, something that can potentially compromise the integrity of the application when a user is using its browsing features.
+The objective for this analysis on Juris data is to detect instances where the case rulings data fields fail to be normalized, something that can potentially compromise the integrity of the application when a user is using its browsing features.
 
-Upon detection 
+The way browsing works in Juris is mostly through the use of its filter textboxes on the browsing main page that are connected to the all the case rulings different type of metadata, when a user types in its desired filter textbox to browse for a case rulings characteristic a suggestion will appear corresponding to it.
+To provide some context this data can be the name of the judge who created the ruling, voting result, decision, procedural mean etc... If this data is not normalized the user will not be viewing all the case rulings of the selected feature as he'd have thought he was as it's not grouped together.
+
+To understand what kind of issues exist that need to be identified it's important to understand what causes them to, so how do the problems with data normalization arise? 
+The Case rulings are written manually by different people therefore different terms can be given when actually referring to the same matter. 
+
+Using real examples found here are some of the reasons: 
+
+Typos - "Revita" -> Revista
+Old Spelling Agreement - "Revista excepcional" -> Revista excecional
+Caps lock - "DESPACHO" -> Despacho
+End dot - "Conflito." -> Conflito
+Different way of writing - "Acordão Unimizador" -> Acordão de unimização
+Extra space
+
+
+
+
+
