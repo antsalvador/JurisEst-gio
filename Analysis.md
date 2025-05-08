@@ -1,6 +1,5 @@
 # Analysis and Design 
 
-## Introduction
 
 
 # Editing Page (Admin - Editar Acórdão)
@@ -8,6 +7,42 @@
 
 
 # Export & Import page (Admin - Editar Acórdão)
+
+## **Main Technologies**
+
+- **React** (with Next.js for routing and SSR)
+- **TypeScript**
+- **Context API** (for form state)
+- **Custom hooks** (e.g., useFetch)
+- **API routes** (Next.js API, e.g., /api/doc/[id])
+
+## **Main Components & Structure**
+
+- **Page file:** src/pages/editar/avancado/[id].tsx
+- **Layout:** Uses DashboardGenericPage for consistent admin look.
+- **Data Fetching:** Uses useFetch to get the document data from /api/doc/[id].
+- **Form State:** Uses UpdateContext (React Context) to manage changes before saving.
+- **Field Editors:** Dynamically renders field editors based on the document schema:
+- TextInput, DateInput, ExactInput, GenericInput, ShowCode, etc. (from @/components/dashboardDoc)
+- **Field Metadata:** Uses useKeysFromContext to know which fields exist and how to render them.
+- **Actions:** Save, Cancel, Delete buttons, which trigger API calls.
+
+## **API Communication**
+
+- **GET /api/doc/[id]**: Fetches the document to edit.
+- **PUT /api/doc/[id]**: Saves changes (sends updated fields as JSON).
+- **DELETE /api/doc/[id]**: Deletes the document.
+
+**Data Flow:**
+1. Page loads, fetches document via useFetch.
+1. User edits fields; changes are stored in UpdateContext.
+1. On save, sends a PUT request with the changed fields.
+1. On delete, sends a DELETE request.
+
+1. 1. Page loads, fetches document via useFetch.
+2. 1. User edits fields; changes are stored in UpdateContext.
+3. 1. On save, sends a PUT request with the changed fields.
+4. 1. On delete, sends a DELETE request.
 
 ## **API Communication**
 
