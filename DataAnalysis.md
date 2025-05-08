@@ -35,17 +35,20 @@ df.head()
 ```
 
 The Excel file is loaded into a pandas DataFrame using the openpyxl engine.
-
-## Available Sheets
+Afterwards the file is read in order to display the sheet names existent that correspond to each data attribute of a case ruling.
 
 ```python
 xls = pd.ExcelFile(file_path)
 xls.sheet_names
 ```
 
-Returns a list of all available sheets in the Excel file.
+It returns a list of all available sheets in the Excel file.
 
-## Working with "Meio Processual"
+## Selecting which sheets to work on
+
+Only certain sheets are relevant to the analysis and this is because not all case ruling data attributes suffer from normalization issues.
+For example the data attribute "Área", which refers to the legal area a case ruling is in, only has a few limited and clearly set options, five to be specific "Área Cível, Área Criminal, Área Social, Contencioso and Formação" making them much more simpler to designate, because of this the legal area and many other data attributes of a case ruling do not contain any issues with its normalization.
+Not all fields are this simple however like "Decisão", the decision taken in a case ruling, that can range from "Absolvido", 
 
 We focus on the "Meio Processual" sheet first.
 
