@@ -1,23 +1,22 @@
 ## Introduction
 
-The objective for this analysis on Juris data is to detect instances where the case rulings data fields fail to be normalized, something that can potentially compromise the integrity of the application when a user is using its browsing features.
+The objective of this analysis on Juris data is to detect instances where case ruling metadata fields are not properly normalized. Such inconsistencies can compromise the integrity of the application, particularly when users browse case rulings via the search filters.
 
-The way browsing works in Juris is mostly through the use of its filter textboxes on the browsing main page that are connected to the all the case rulings different type of metadata, when a user types in its desired filter textbox to browse for a case rulings characteristic a suggestion will appear corresponding to it.
-To provide some context this data can be the name of the judge who created the ruling, voting result, decision, procedural mean etc... If this data is not normalized the user will not be viewing all the case rulings of the selected feature as he'd have thought he was as it's not grouped together.
+### How Browsing Works in Juris
 
-To understand what kind of issues exist that need to be identified it's important to understand what causes them to, so how do the problems with data normalization arise? 
-The Case rulings are written manually by different people therefore different terms can be given when actually referring to the same matter. 
+Browsing in Juris primarily relies on filter textboxes located on the main page. These textboxes are connected to various metadata fields of case rulings such as the judge’s name, voting result, decision type, and procedural means. When users type into a filter textbox, suggestions are presented based on the existing data.
 
-Using real examples found here are some of the reasons: 
+If this metadata is not normalized, users may not see all case rulings corresponding to a given filter value, even when they think they should. This fragmentation arises because identical concepts are represented using different formats or terms.
 
-Typos - "Revita" -> Revista
-Old Spelling Agreement - "Revista excepcional" -> Revista excecional
-Caps lock - "DESPACHO" -> Despacho
-End dot - "Conflito." -> Conflito
-Different way of writing - "Acordão Unimizador" -> Acordão de unimização
-Extra space
+### Causes of Normalization Issues
 
+These inconsistencies stem from manual data entry by various contributors, leading to variations in the way the same information is recorded since different people can use different terms when actually referring to the same matter. Below are real examples illustrating the types of issues found:
 
+- **Typos**: `"Revita"` → `"Revista"`
+- **Old Spelling Agreements**: `"Revista excepcional"` → `"Revista excecional"`
+- **Capitalization**: `"DESPACHO"` → `"Despacho"`
+- **Punctuation**: `"Conflito."` → `"Conflito"`
+- **Rephrasing**: `"Acordão Unimizador"` → `"Acordão de unificação"`
+- **Extra Spaces**
 
-
-
+Detecting and correcting these normalization issues is key to improving search accuracy and user experience within the Juris application.
