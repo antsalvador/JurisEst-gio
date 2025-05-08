@@ -1,5 +1,0 @@
-## Introduction
-
-The object for this analysis of Juris' data is to detect instances of fields where there is no data normalization, something that can potentially compromise the integrity of the application when a user is using its browsing features.
-
-Upon detection 
