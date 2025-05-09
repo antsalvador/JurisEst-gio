@@ -91,3 +91,16 @@
 **When** the admin modifies the content by clicking on a suggested change or manually editing a field,  
 **Then** the updated values are saved successfully and reflected when the page reloads.
 
+
+
+| Syntax      |                                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------------------- |
+| Name:       | <table id="export_filtered_data">Export filtered data to Excel</table>                              |
+| Scenario:   | 1. Actor <ins> opens the export dashboard page </ins>                                              |
+|             | 2. Actor <ins> selects a date range filter (e.g., “since 2024-01-01”)</ins>                        |
+|             | 3. Actor <ins> selects a rare attribute filter (e.g., “Tipo: UnusualType”)</ins>                   |
+|             | 4. System displays a list of records matching the filters                                          |
+|             | 5. Actor <ins> clicks the “Export to Excel” button</ins>                                           |
+|             | 6. System generates and downloads an Excel file                                                    |
+|             | 7. Actor opens the Excel file and verifies it contains only the filtered records                   |
+|             | 8. System displays a confirmation message that export was successful                               |
