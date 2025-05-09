@@ -2,15 +2,14 @@
 
 This document outlines the architecture and planned enhancements for key administrative interfaces of the Juris system—focusing on the "Editar Acórdão" and "Export/Import" pages. It includes an overview of current implementations, communication flows, and a structured roadmap for future improvements.
 
-# Editing Page (Admin - Editar Acórdão)
-
 ## **Main Technologies**
 
 - **React** (with Next.js for routing and SSR)
 - **TypeScript**
 - **Context API** (for form state)
 - **Custom hooks** (e.g., useFetch)
-- **API routes** (Next.js API, e.g., /api/doc/[id])
+
+# Editing Page (Admin - Editar Acórdão)
 
 ## **Main Components & Structure**
 
@@ -55,13 +54,6 @@ For import: sends a FormData with the file.
 For export: sends selected fields as query params.
 
 - **GET /api/excel/[id]/[link]**: Downloads a specific file (exported Excel, aggregation, etc).
-
-## **Main Technologies**
-
-- **React** (with Next.js)
-- **TypeScript**
-- **Custom hooks** (e.g., useFetch)
-- **API routes** (Next.js API, e.g., /api/excel/run, /api/excel/files)
 
 **Data Flow:**
 
