@@ -64,6 +64,10 @@ For export: sends selected fields as query params.
 5. Table updates via polling /api/excel/files.
 6. User can download files via links.
 
+Here is a sequence diagram portraying the Export page:
+
+ExportSequenceDiagram.png
+
 
 # Export Page Enhancements – Feature Overview & Implementation Plan
 
