@@ -2,7 +2,6 @@
 
 ## Dashboard: Export Page – “Export Filtered Data to Excel”
 
-| Syntax    |                                                                                                      |
 |-----------|------------------------------------------------------------------------------------------------------|
 | Name:     | <table id="export_filtered_data">Export filtered data to Excel</table>                               |
 | Scenario: | 1. Actor opens the export dashboard page                                                             |
@@ -17,7 +16,6 @@
 
 ## Dashboard: Import Page – “View Analytical Report After Excel Import”
 
-| Syntax    |                                                                                                     |
 |-----------|-----------------------------------------------------------------------------------------------------|
 | Name:     | <table id="import_excel_report">View analytical report after Excel import</table>                   |
 | Scenario: | 1. Actor opens the export dashboard page                                                             |
