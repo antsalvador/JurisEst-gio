@@ -4,6 +4,8 @@
 
 The objective of this analysis on Juris data is to detect instances where case ruling metadata fields are not properly normalized. Such inconsistencies can compromise the integrity of the application, particularly when users browse case rulings via the search filters.
 
+The code snippets used are taken from [JurisData](!JurisDataAnalysis.ipynb)
+
 ## How Browsing Works in Juris
 
 Browsing in Juris primarily relies on filter textboxes located on the main page. These textboxes are connected to various metadata fields of case rulings such as the judge’s name, voting result, decision type, and procedural means. When users type into a filter textbox, suggestions are presented based on the existing data.
