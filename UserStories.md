@@ -16,11 +16,11 @@
 
 
 ### View Data Over Time
-- Actor selects a date range.
-- System displays a chart of records created per day/week/month.
+- Actor selects a date range or date.
+- System displays a chart of records created per day/week/month or since a specific date.
 
 ### Find Rare Attribute Values
-- Actor selects an attribute (e.g., “Tipo”).
+- Actor selects an attribute (e.g., “Decisão”).
 - System lists the rarest values and their counts.
 
 ### Advanced Search/Filter
@@ -39,75 +39,55 @@
 - Actor clicks “Edit” on a record in the list.
 - System opens the editing page for that record.
 
----
 
 ## Editing Page
 
 ### Edit Case Ruling
 - Actor loads a case ruling.
-- Actor edits fields.
-- Actor saves changes.
+- Actor types in fields.
+- Actor clicks on suggestion.
 - System updates the record and confirms success.
-
-### Delete Case Ruling
-- Actor clicks “Delete”.
-- System asks for confirmation.
-- Actor confirms.
-- System deletes the record.
-
----
 
 # Test Scenarios
 
-## Dashboard
+## Dashboard Functionality
 
 ### Viewing Data Over Time
-- Given records exist with various creation dates,  
-  When the admin selects a date range,  
-  Then only records from that range are shown in the chart.
+**Given** records exist with various creation dates,  
+**When** the admin selects a specific date range,  
+**Then** the chart updates to show only records created within that range.
 
 ### Finding Rare Values
-- Given records with common and rare values,  
-  When the admin selects an attribute,  
-  Then the rarest values are listed first.
+**Given** a dataset containing both common and rare attribute values,  
+**When** the admin selects a particular attribute (e.g., “Tipo”),  
+**Then** the system displays a list sorted by rarity, showing the rarest values first.
 
 ### Advanced Filtering
-- Given various records,  
-  When the admin applies filters,  
-  Then only matching records are shown.
+**Given** a collection of diverse records,  
+**When** the admin applies one or more filters (e.g., date, type),  
+**Then** only records matching those criteria are shown in the table.
 
-### Exporting Current View
-- Given a filtered view,  
-  When the admin clicks “Export”,  
-  Then the downloaded Excel matches the current filters.
+### Exporting the Current View
+**Given** a filtered dataset visible in the dashboard,  
+**When** the admin clicks the “Export to Excel” button,  
+**Then** the system generates and downloads an Excel file reflecting the current filtered view.
 
-### Importing Excel
-- Given a valid Excel file,  
-  When the admin uploads it,  
-  Then a report is shown listing all created/updated records and any errors.
+### Importing Excel and Viewing Report
+**Given** a valid Excel file formatted for import,  
+**When** the admin uploads the file through the interface,  
+**Then** the system processes the file and displays a report detailing created records, updated entries, and any encountered errors.
 
-### Editing from List
-- Given a list of records,  
-  When the admin clicks “Edit”,  
-  Then the editing page for that record opens.
+### Editing from the Record List
+**Given** a list of searchable or filtered records,  
+**When** the admin clicks the “Edit” button on a specific record,  
+**Then** the system navigates to the editing page for that document.
 
 ---
 
-## Editing Page
+## Editing Page Interactions
 
-### Editing and Saving
-- Given a case ruling,  
-  When the admin edits and saves,  
-  Then the changes are persisted and shown on reload.
-
-### Editing and Cancelling
-- Given a case ruling,  
-  When the admin edits and cancels,  
-  Then no changes are saved.
-
-### Deleting
-- Given a case ruling,  
-  When the admin deletes and confirms,  
-  Then the record is removed from the database.
-
+### Editing and Saving a Case Ruling
+**Given** a case ruling loaded in the editing interface,  
+**When** the admin modifies the content by clicking on a suggested change or manually editing a field,  
+**Then** the updated values are saved successfully and reflected when the page reloads.
 
