@@ -1,20 +1,14 @@
+# Test Scenarios
 
-# User Stories
--------------
-1. As a user, I want to be able to select a specific date.
-2. As an admin, I want to be able view suggestions while editing case rulings, so I can be more effecient and ensure data normalization.
-3. As an admin, I want to filter and see only the records created since a specific date or time period, so I can track activity.
-4. As an admin, I want to be able to easily visualize abnormal data attributes, so I can investigate outliers.
-5. As an admin, I want to export to Excel exactly what I’m seeing in the dashboard, so I can analyze or share it externally.
-6. As an admin, I want to quickly edit any record from the dashboard list, so I can correct or update data efficiently.
-7. As an admin, I want to see a detailed report after importing an Excel file, so I know what was updated or added.
----------------------------------------------------------------------------------------------------------
 
+
+
+## Dashboard: Export Page – “Export Filtered Data to Excel”
 
 | Syntax      |                                                                                                    |
 | ----------- | -------------------------------------------------------------------------------------------------- |
 | Name:       | <table id="export_filtered_data">Export filtered data to Excel</table>                              |
-| Scenario:   | 1. Actor <ins> opens the export dashboard page </ins>                                              |
+| Scenario:   | 1. Actor opens the export dashboard page                                                     |
 |             | 2. Actor <ins> selects a date range filter (e.g., “since 2024-01-01”)</ins>                        |
 |             | 3. Actor <ins> selects a rare attribute filter (e.g., “Tipo: UnusualType”)</ins>                   |
 |             | 4. System displays a list of records matching the filters                                          |
