@@ -13,7 +13,9 @@ This document outlines the architecture and planned enhancements for key adminis
 
 ## **Main Components & Structure**
 
-This page lives under src/pages/editar/avancado/[id].tsx and uses a shared layout component (DashboardGenericPage) to maintain a consistent admin appearance. When the page loads, it fetches the document to be edited and dynamically renders input components such as TextInput, DateInput, and ShowCode based on the schema defined in the dashboardDoc module. The fields to be displayed are determined via useKeysFromContext, which interprets the structure of the document and the editing context.
+This page lives under src/pages/editar/avancado/[id].tsx and uses a shared layout component (DashboardGenericPage) to maintain a consistent admin appearance. This ensures the page has the admin navigation/header, the user is authenticated and has access to field metadata and that he page is styled consistently with other admin dashboard pages.
+
+ When the page loads, it fetches the document to be edited and dynamically renders input components such as TextInput, DateInput, and ShowCode based on the schema defined in the dashboardDoc module. The fields to be displayed are determined via useKeysFromContext, which interprets the structure of the document and the editing context.
 
 - **Page file:** src/pages/editar/avancado/[id].tsx
 - **Layout:** Uses DashboardGenericPage for consistent admin look.
