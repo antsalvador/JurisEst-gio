@@ -66,7 +66,7 @@ For export: sends selected fields as query params.
 
 Here is a sequence diagram portraying the Export page:
 
-ExportSequenceDiagram.png
+!ExportSequenceDiagram.png
 
 
 # Export Page Enhancements – Feature Overview & Implementation Plan
