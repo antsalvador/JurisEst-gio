@@ -4,7 +4,7 @@
 
 The objective of this analysis on Juris data is to detect instances where case ruling metadata fields are not properly normalized. Such inconsistencies can compromise the integrity of the application, particularly when users browse case rulings via the search filters.
 
-The code snippets used are taken from [JurisData](!JurisDataAnalysis.ipynb)
+The code snippets used here can all be found on [JurisDataAnalysis](!JurisDataAnalysis.ipynb), the entire notebook used for the analysis.
 
 ## How Browsing Works in Juris
 
