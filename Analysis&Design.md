@@ -45,6 +45,18 @@ This page lives under src/pages/editar/avancado/[id].tsx and uses a shared layou
 
 # Export & Import page (Admin - Editar Acórdão)
 
+## **Main Components & Structure**
+
+Main Components & Structure
+Page file: src/pages/admin/excel/index.tsx
+Layout: Uses DashboardGenericPage.
+Field Selection: Renders checkboxes for each exportable field (from @/components/exportable-keys).
+File Upload: <input type="file" /> for importing Excel files.
+Progress Bars: Show status of import/export operations.
+Action Buttons: "Atualizar" (import), "Nova exportação" (export).
+Export History Table: Lists previous exports/imports, with download links.
+RowFile/CellFile: Components for rendering each row/cell in the history table.
+
 ## **API Communication**
 
 - **GET /api/excel/status**: Fetches current progress of import/export.
@@ -86,7 +98,7 @@ The first planned feature is a dashboard that visualizes how many records exist 
 
 ---
 
-### B. Rare Value Insights
+### Rare Value Insights
 
 Another planned enhancement is a tool to surface rare or uncommon metadata values—such as seldom-used “Tipo” or “Estado” values.
 
@@ -97,7 +109,7 @@ Another planned enhancement is a tool to surface rare or uncommon metadata value
 
 ---
 
-### C. Advanced Data Filtering
+### Advanced Data Filtering
 
 To improve data diagnostics, an advanced filtering panel will be added. This will resemble the public-facing search UI but expose additional filters only available to admins. These components will be placed directly above the results table and connected to extended versions of existing search APIs.
 
@@ -108,14 +120,14 @@ To improve data diagnostics, an advanced filtering panel will be added. This wil
 
 ---
 
-### D. Inline Record Editing
+### Inline Record Editing
 
 - Objective: Edit records directly from the data table.
 - Status: Already implemented via “Edit” button on each table row.
 
 ---
 
-### E. Filtered Excel Export
+### Filtered Excel Export
 
 Next, an "Export to Excel" feature will be introduced that respects the currently active filters. When triggered, it sends these filters to the backend, which returns an Excel file containing only the relevant data. This button will be situated near the search filters or just above the results table.
 
@@ -126,7 +138,7 @@ Next, an "Export to Excel" feature will be introduced that respects the currentl
 
 ---
 
-### F. Post-Upload Analysis Report
+### Post-Upload Analysis Report
 
 Finally, after an Excel import operation, the page should now display a comprehensive analysis report of the changes the import brings into the database.
 
