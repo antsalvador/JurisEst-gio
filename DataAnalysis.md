@@ -84,6 +84,8 @@ df_descritores = pd.read_excel(xls, sheet_name=sheet_name)
 
 ### For "Meio Processual - Mostrar"
 
+Once the unique terms are isolated, a graph structure where each node represents a unique string is constructed, and edges are formed between nodes that are textually similar. To measure this similarity, the script uses the token_sort_ratio metric from the fuzz module (part of the thefuzz library), which compares strings based on their token content, regardless of word order. A similarity threshold of 85% was chosen to capture variations such as typos, case mismatches, inconsistent spacing, or alternate phrasings.
+
 ```python
 # Extração de strings unicas
 all_strings = set()
