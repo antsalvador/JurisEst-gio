@@ -1,6 +1,6 @@
 # Analysis and Design 
 
-This document outlines the architecture and planned enhancements for key administrative interfaces of the Juris system—focusing on the "Editar Acórdão" and "Export/Import" pages. It includes an overview of current implementations, communication flows, and a structured roadmap for future improvements.
+This document outlines the architecture and planned enhancements for key administrative interfaces of the Juris system—focusing on the "Editar Acórdão" and "Exportar/Importar" pages. It includes an overview of current implementations, communication flows, and a structured roadmap for future improvements.
 
 ## **Main Technologies**
 
