@@ -121,6 +121,52 @@ This script identifies string pairs with high similarity, which may represent in
 'ação penal' and 'Ação Penal' --> Similarity Score: 100
 ```
 
+```python
+# Encontrar clusters
+visited = set()
+clusters = []
+
+def bfs(start):
+    queue = deque([start])
+    cluster = set()
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            visited.add(node)
+            cluster.add(node)
+            queue.extend(graph[node])
+    return cluster
+
+for string in all_strings:
+    if string not in visited:
+        cluster = bfs(string)
+        if cluster:
+            clusters.append(cluster)
+
+```
+
+
+```python
+# DataFrame final
+results = []
+for cluster in clusters:
+    sorted_cluster = sorted(cluster, key=lambda x: (len(x), x.lower()))
+    representative = sorted_cluster[0]
+    similar = [s for s in sorted_cluster if s != representative]
+    results.append({
+        "Meio Representativo": representative,
+        "Meios Semelhantes": ", ".join(similar)
+    })
+
+# Resultados são salvos, ordenados por ordem alfabética e exportados como clusterDescritores
+final_df = pd.DataFrame(results)
+final_df.sort_values(by="Meio Representativo", inplace=True)
+
+
+final_df.to_csv("clustersMeioProcessual.csv", index=False)
+print("✅ Done! Results saved to 'clustersMeioProcessual.csv'")
+```
+
 ### Repeat for "Meio Processual - Indice"
 
 ```python
