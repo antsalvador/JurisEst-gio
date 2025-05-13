@@ -68,22 +68,45 @@ Returns all the column names. The key columns of interest are:
 
 We apply fuzzy matching using RapidFuzz to identify near-duplicate entries based on similarity scores.
 
+```python
+import pandas as pd
+from thefuzz import fuzz
+from collections import defaultdict, deque
+
+
+file_path = "Downloads/JurisData.xlsx"  
+sheet_name = "Meio Processual"  
+column_name = "Meio Processual - Mostrar" 
+
+xls = pd.ExcelFile(file_path)
+df_descritores = pd.read_excel(xls, sheet_name=sheet_name)
+```
+
 ### For "Meio Processual - Mostrar"
 
 ```python
-from rapidfuzz import fuzz
-from itertools import combinations
+# Extração de strings unicas
+all_strings = set()
+for val in df_descritores[column_name].dropna():
+    for part in str(val).split(","):
+        clean = part.strip()
+        if clean:
+            all_strings.add(clean)
 
-column_name = "Meio Processual - Mostrar"
-unique_strings = df_dados[column_name].dropna().unique()
-normalized_strings = [s.strip().lower() for s in unique_strings]
+all_strings = list(all_strings)
 
-threshold = 90
-similar_pairs = []
-for s1, s2 in combinations(range(len(normalized_strings)), 2):
-    score = fuzz.ratio(normalized_strings[s1], normalized_strings[s2])
-    if score >= threshold and normalized_strings[s1] != normalized_strings[s2]:
-        similar_pairs.append((unique_strings[s1], unique_strings[s2], score))
+# Graph de semelhança 
+similarity_threshold = 85
+graph = defaultdict(set)
+
+print("🔍 Building similarity graph...")
+for i in range(len(all_strings)):
+    for j in range(i + 1, len(all_strings)):
+        a, b = all_strings[i], all_strings[j]
+        if fuzz.token_sort_ratio(a, b) >= similarity_threshold:
+            graph[a].add(b)
+            graph[b].add(a)
+
 ```
 
 This script identifies string pairs with high similarity, which may represent inconsistent but semantically equivalent entries.
