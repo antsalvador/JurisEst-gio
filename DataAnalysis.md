@@ -109,6 +109,27 @@ for i in range(len(all_strings)):
             graph[a].add(b)
             graph[b].add(a)
 
+# Encontrar clusters
+visited = set()
+clusters = []
+
+def bfs(start):
+    queue = deque([start])
+    cluster = set()
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            visited.add(node)
+            cluster.add(node)
+            queue.extend(graph[node])
+    return cluster
+
+for string in all_strings:
+    if string not in visited:
+        cluster = bfs(string)
+        if cluster:
+            clusters.append(cluster)
+
 ```
 
 This script identifies string pairs with high similarity, which may represent inconsistent but semantically equivalent entries.
