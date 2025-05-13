@@ -109,27 +109,6 @@ for i in range(len(all_strings)):
             graph[a].add(b)
             graph[b].add(a)
 
-# Encontrar clusters
-visited = set()
-clusters = []
-
-def bfs(start):
-    queue = deque([start])
-    cluster = set()
-    while queue:
-        node = queue.popleft()
-        if node not in visited:
-            visited.add(node)
-            cluster.add(node)
-            queue.extend(graph[node])
-    return cluster
-
-for string in all_strings:
-    if string not in visited:
-        cluster = bfs(string)
-        if cluster:
-            clusters.append(cluster)
-
 ```
 
 This script identifies string pairs with high similarity, which may represent inconsistent but semantically equivalent entries.
@@ -141,6 +120,7 @@ This script identifies string pairs with high similarity, which may represent in
 'DESPACHO' and 'Despacho' --> Similarity Score: 100
 'ação penal' and 'Ação Penal' --> Similarity Score: 100
 ```
+The graph is then traversed using a Breadth-First Search (BFS) algorithm to find connected components, which correspond to clusters of similar strings. Each cluster groups all variations of a particular procedural term that are likely referring to the same concept. For each cluster, the script selects a representative term—typically the shortest or most simple string—as the normalized version. The remaining terms in the cluster are considered similar variants. This choice helps ensure consistency and readability in the filtered metadata. 
 
 ```python
 # Encontrar clusters
@@ -165,7 +145,7 @@ for string in all_strings:
             clusters.append(cluster)
 
 ```
-
+Finally, the clusters are organized into a structured table with two columns “Meio Representativo” and “Meios Semelhantes” to then be exported as CSV file.
 
 ```python
 # DataFrame final
