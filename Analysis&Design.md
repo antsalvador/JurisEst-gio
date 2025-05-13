@@ -96,9 +96,8 @@ The first planned feature is a dashboard that visualizes how many records exist 
 
 ### Rare Value Insights
 
-Another planned enhancement is a tool to surface rare or uncommon metadata values—such as seldom-used “Tipo” or “Estado” values.
-
-- Objective: Identify uncommon or specific attribute values (e.g., “Tipo”, “Estado”).
+Another planned enhancement is a tool to surface rare or uncommon metadata entries that can possibly be data normalization issues.
+- Objective: Identify uncommon or specific attribute values 
 - Backend: API endpoint (`/api/analytics/rare-values?field=Tipo`) returning sorted value counts.
 - Frontend: Attribute selector (dropdown) with chart or list of rare values.
 - UI Placement: Below or beside the time-based chart.
