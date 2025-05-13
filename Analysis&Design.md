@@ -38,10 +38,6 @@ This page lives under src/pages/editar/avancado/[id].tsx and uses a shared layou
 1. On save, sends a PUT request with the changed fields.
 1. On delete, sends a DELETE request.
 
-1. 1. Page loads, fetches document via useFetch.
-2. 1. User edits fields; changes are stored in UpdateContext.
-3. 1. On save, sends a PUT request with the changed fields.
-4. 1. On delete, sends a DELETE request.
 
 # Export & Import page (Admin - Editar Acórdão)
 
