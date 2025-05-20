@@ -1,6 +1,6 @@
 # Analysis and Design 
 
-This document outlines the architecture and planned enhancements for key administrative interfaces of the Juris system—focusing on the "Editar Acórdão" and "Export/Import" pages. It includes an overview of current implementations, communication flows, and a structured roadmap for future improvements.
+This document outlines the architecture and planned enhancements for key administrative interfaces of the Juris system—focusing on the "Editar Acórdão" and "Exportar/Importar" pages. It includes an overview of current implementations, communication flows, and a structured roadmap for future improvements.
 
 ## **Main Technologies**
 
@@ -38,10 +38,6 @@ This page lives under src/pages/editar/avancado/[id].tsx and uses a shared layou
 1. On save, sends a PUT request with the changed fields.
 1. On delete, sends a DELETE request.
 
-1. 1. Page loads, fetches document via useFetch.
-2. 1. User edits fields; changes are stored in UpdateContext.
-3. 1. On save, sends a PUT request with the changed fields.
-4. 1. On delete, sends a DELETE request.
 
 # Export & Import page (Admin - Editar Acórdão)
 
@@ -100,9 +96,8 @@ The first planned feature is a dashboard that visualizes how many records exist 
 
 ### Rare Value Insights
 
-Another planned enhancement is a tool to surface rare or uncommon metadata values—such as seldom-used “Tipo” or “Estado” values.
-
-- Objective: Identify uncommon or specific attribute values (e.g., “Tipo”, “Estado”).
+Another planned enhancement is a tool to surface rare or uncommon metadata entries that can possibly be data normalization issues.
+- Objective: Identify uncommon or specific attribute values 
 - Backend: API endpoint (`/api/analytics/rare-values?field=Tipo`) returning sorted value counts.
 - Frontend: Attribute selector (dropdown) with chart or list of rare values.
 - UI Placement: Below or beside the time-based chart.

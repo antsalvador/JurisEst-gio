@@ -68,22 +68,47 @@ Returns all the column names. The key columns of interest are:
 
 We apply fuzzy matching using RapidFuzz to identify near-duplicate entries based on similarity scores.
 
+```python
+import pandas as pd
+from thefuzz import fuzz
+from collections import defaultdict, deque
+
+
+file_path = "Downloads/JurisData.xlsx"  
+sheet_name = "Meio Processual"  
+column_name = "Meio Processual - Mostrar" 
+
+xls = pd.ExcelFile(file_path)
+df_descritores = pd.read_excel(xls, sheet_name=sheet_name)
+```
+
 ### For "Meio Processual - Mostrar"
 
+Once the unique terms are isolated, a graph structure where each node represents a unique string is constructed, and edges are formed between nodes that are textually similar. To measure this similarity, the script uses the token_sort_ratio metric from the fuzz module (part of the thefuzz library), which compares strings based on their token content, regardless of word order. A similarity threshold of 85% was chosen to capture variations such as typos, case mismatches, inconsistent spacing, or alternate phrasings.
+
 ```python
-from rapidfuzz import fuzz
-from itertools import combinations
+# Extração de strings unicas
+all_strings = set()
+for val in df_descritores[column_name].dropna():
+    for part in str(val).split(","):
+        clean = part.strip()
+        if clean:
+            all_strings.add(clean)
 
-column_name = "Meio Processual - Mostrar"
-unique_strings = df_dados[column_name].dropna().unique()
-normalized_strings = [s.strip().lower() for s in unique_strings]
+all_strings = list(all_strings)
 
-threshold = 90
-similar_pairs = []
-for s1, s2 in combinations(range(len(normalized_strings)), 2):
-    score = fuzz.ratio(normalized_strings[s1], normalized_strings[s2])
-    if score >= threshold and normalized_strings[s1] != normalized_strings[s2]:
-        similar_pairs.append((unique_strings[s1], unique_strings[s2], score))
+# Graph de semelhança 
+similarity_threshold = 85
+graph = defaultdict(set)
+
+print("🔍 Building similarity graph...")
+for i in range(len(all_strings)):
+    for j in range(i + 1, len(all_strings)):
+        a, b = all_strings[i], all_strings[j]
+        if fuzz.token_sort_ratio(a, b) >= similarity_threshold:
+            graph[a].add(b)
+            graph[b].add(a)
+
 ```
 
 This script identifies string pairs with high similarity, which may represent inconsistent but semantically equivalent entries.
@@ -94,6 +119,53 @@ This script identifies string pairs with high similarity, which may represent in
 'Procedimento ordinário' and 'procedimento ordinario' --> Similarity Score: 95
 'DESPACHO' and 'Despacho' --> Similarity Score: 100
 'ação penal' and 'Ação Penal' --> Similarity Score: 100
+```
+The graph is then traversed using a Breadth-First Search (BFS) algorithm to find connected components, which correspond to clusters of similar strings. Each cluster groups all variations of a particular procedural term that are likely referring to the same concept. For each cluster, the script selects a representative term—typically the shortest or most simple string—as the normalized version. The remaining terms in the cluster are considered similar variants. This choice helps ensure consistency and readability in the filtered metadata. 
+
+```python
+# Encontrar clusters
+visited = set()
+clusters = []
+
+def bfs(start):
+    queue = deque([start])
+    cluster = set()
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            visited.add(node)
+            cluster.add(node)
+            queue.extend(graph[node])
+    return cluster
+
+for string in all_strings:
+    if string not in visited:
+        cluster = bfs(string)
+        if cluster:
+            clusters.append(cluster)
+
+```
+Finally, the clusters are organized into a structured table with two columns “Meio Representativo” and “Meios Semelhantes” to then be exported as CSV file.
+
+```python
+# DataFrame final
+results = []
+for cluster in clusters:
+    sorted_cluster = sorted(cluster, key=lambda x: (len(x), x.lower()))
+    representative = sorted_cluster[0]
+    similar = [s for s in sorted_cluster if s != representative]
+    results.append({
+        "Meio Representativo": representative,
+        "Meios Semelhantes": ", ".join(similar)
+    })
+
+# Resultados são salvos, ordenados por ordem alfabética e exportados como clusterDescritores
+final_df = pd.DataFrame(results)
+final_df.sort_values(by="Meio Representativo", inplace=True)
+
+
+final_df.to_csv("clustersMeioProcessual.csv", index=False)
+print("✅ Done! Results saved to 'clustersMeioProcessual.csv'")
 ```
 
 ### Repeat for "Meio Processual - Indice"

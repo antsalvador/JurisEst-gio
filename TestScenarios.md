@@ -5,23 +5,23 @@
 | Syntax    |                                                                                                      |
 |-----------|------------------------------------------------------------------------------------------------------|
 | Name:     | <table id="export_filtered_data">Export filtered data to Excel</table>                               |
-| Scenario: | 1. Actor opens the export dashboard page                                                             |
-|           | 2. Actor selects a date range filter (e.g., “since 2024-01-01”)                                      |
-|           | 3. Actor selects a rare attribute filter (e.g., “Tipo: UnusualType”)                                 |
+| Scenario: | 1. Admin opens the export dashboard page                                                             |
+|           | 2. Admin selects a date range filter (e.g., “since 2024-01-01”)                                      |
+|           | 3. Admin selects a rare attribute filter (e.g., “Meio Processual: UnusualType”)                      |
 |           | 4. System displays a list of records matching the filters                                            |
-|           | 5. Actor clicks the “Export to Excel” button                                                         |
+|           | 5. Admin clicks the “Export to Excel” button                                                         |
 |           | 6. System generates and downloads an Excel file                                                      |
-|           | 7. Actor opens the Excel file and verifies it contains only the filtered records                    |
-|           | 8. System displays a confirmation message that export was successful                                 |
+|           | 7. System displays a confirmation message that export was successful                                 |
+|           | 8. Admin opens the Excel file and verifies it contains only the filtered records                     |
 
 
 ## Dashboard: Import Page – “View Analytical Report After Excel Import”
 
 | Syntax    |                                                                                                     |
 |-----------|-----------------------------------------------------------------------------------------------------|
-| Name:     | <table id="import_excel_report">View analytical report after Excel import</table>                   |
-| Scenario: | 1. Actor opens the export dashboard page                                                             |
-|           | 2. Actor clicks the “Import Excel” button and selects a valid Excel file                            |
+| Name:     | <table id="import_excel_report">View analytical report after Excel import</table>                    |
+| Scenario: | 1. Admin opens the export dashboard page                                                             |
+|           | 2. Admin clicks the “Import Excel” button and selects a valid Excel file                             |
 |           | 3. System uploads and processes the file                                                             |
 |           | 4. System displays a detailed analytical report, including:                                          |
 |           |    - Number of records created                                                                       |
@@ -36,10 +36,10 @@
 | Syntax    |                                                                                                     |
 |-----------|-----------------------------------------------------------------------------------------------------|
 | Name:     | <table id="advanced_filtering">Advanced Filtering by Date and Attribute</table>                     |
-| Scenario: | 1. Actor navigates to the dashboard                                                                  |
-|           | 2. Actor enters a date filter and selects attribute (e.g., “Decisão: AtypicalDecision”)             |
+| Scenario: | 1. Admin navigates to the dashboard                                                                  |
+|           | 2. Admin enters a date filter and selects attribute (e.g., “Decisão: AtypicalDecision”)             |
 |           | 3. System shows a filtered list of records matching the criteria                                     |
-|           | 4. Actor verifies only relevant records are visible                                                  |
+|           | 4. Admin verifies only relevant records are visible                                                  |
 
 
 ## Dashboard: Analysis – “Rare Attribute Value Discovery”
