@@ -1,4 +1,4 @@
-#Interviews with STJ employees
+# Interviews with STJ employees
 
 Summary of the the meetings with different employees of STJ on the 14th of May with the Library team and 15th of May with STJ judges. 
 
@@ -12,12 +12,12 @@ Instead the team currently uses IBM's Lotus Notes for creating and editing the c
 
 In the meeting we had the opportunity to visualize all these tools, compare them to Juris and discuss what causes the team not to use it. 
 
-#These are the biggest takeways:
+# These are the biggest takeways:
  
 
 
 
-##Search Functionality
+## Search Functionality
 
 In Juris only 10 case rulings appear in the search page, this amount should be costumizable as many users prefer to be able to scroll down through all of the case rulings available as you can in DGSI and ECLI.
 
@@ -37,7 +37,7 @@ Search should find case rulings containing all specified terms and not only some
 
 The current order of the existing metadata fields is unpratical. This can be modified already by users but some of the fields are found to be useless for both the librarians and judges and others for just one of them like "Área".
 
-###Ideal Metadata Field Order
+### Ideal Metadata Field Order
 
 Número de acordão 
 Secção 
@@ -45,7 +45,7 @@ Data
 Relator 
 Meio Processual
 
-###Useless Fields
+### Useless Fields
 
 Votaçãom
 Área (Useful for Judges)
@@ -55,7 +55,7 @@ Decisao
 Fonte
 Estado
 
-###Case Ruling Display
+### Case Ruling Display
 There was also a lot of feedback regarding case ruling display,
 
 For each case ruling, show in small format:
@@ -66,7 +66,7 @@ For each case ruling, show in small format:
 - Section
 - Descriptors
 
-##Backoffice Improvements
+## Backoffice Improvements
 
 Juris currently duplicates a case ruling once it is edited, this is a major bug to be fixed that compromises data normalization.
 
@@ -81,7 +81,7 @@ Lotus Notes doesn't update all records
 "Area" field is redundant as "Section" handles everything automatically
 
 
-##UI/UX Improvements
+## UI/UX Improvements
 
 Increase text size and shorten the width of the case ruling display as it's difficult to read case rulings due to small text and ver long sentences, compare it to ECLI who does it best 
 
@@ -91,7 +91,7 @@ Show fewer case rulings in demonstration but always keep summary open. Summary i
 
 
 
-##Additional Features
+## Additional Features
 - Statistics dashboard would be very interesting
 - For search purposes, old descriptors should neither be marked nor completely removed
 - For creation, only use current descriptors, not the complete list
