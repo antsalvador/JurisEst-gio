@@ -58,9 +58,7 @@ The current order of the existing metadata fields is unpratical. This can be mod
 - Estado
 
 ### Case Ruling Display
-There was also a lot of feedback regarding case ruling display,
-
-For each case ruling, show in small format:
+There was also a lot of feedback regarding case ruling display. For each case ruling, it should be showed in small format:
 - Number
 - Date
 - Reporter
