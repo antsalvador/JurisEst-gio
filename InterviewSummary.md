@@ -1,21 +1,21 @@
 # Interviews with STJ employees
 
-Summary of the the meetings with different employees of STJ on the 14th of May with the Library team and 15th of May with STJ judges. 
+Summary of the the meetings with different employees of the Supremo Tribunal de Justiça undertaken on the 14th of May with the Library team and 15th of May with STJ judges. 
 
+The first interview conducted was with the Librarian team at STJ led by André Capricho. They are responsible for creating new case rulings assigned by the STJ and of editing the existing case rulings that are viewed on Juris meaning they used the back office interface on a day to day basis.
 
-The first interview conducted was with the Librarian team at STJ led by André Capricho. They are responsible for creating new case rulings assigned by the STJ and of editing the existing case rulings that are viewed on Juris.
+The way they receive the case rulings to be created is through email in a picture of the form the Courts use that contains all the case rulings metada and summary in the email itself.
 
-The way they receive the case rulings to be created is through email in a picture of the form the Courts use that contains all the case rulings metada and summary in the email itself. 
+The last meeting with the judges was mostly focused on the browsing aspect of the application.
 
-The most signficant discovery from the interview is that the librarians pretty much do not use Juris, the entire team dislikes it and finds its current version unpratical and not intuitive for various reasons.
+The most signficant discovery from the interview is that both the librarians and the judges pretty much do not use Juris, the entire team dislikes it and finds its current version unpratical and not intuitive for various reasons.
 Instead the team currently uses IBM's Lotus Notes for creating and editing the case rulings and DGDSI (the database Juris fetches from) and ECLI (European Case Law Identifier) to search for the existing case rulings in detriment to Juris because of better UI and features. 
 
-In the meeting we had the opportunity to visualize all these tools, compare them to Juris and discuss what causes the team not to use it. 
+
+In the meetings we had the opportunity to visualize all these tools, compare them to Juris and discuss what causes the team not to use it. 
 
 # These are the biggest takeways:
  
-
-
 
 ## Search Functionality
 
