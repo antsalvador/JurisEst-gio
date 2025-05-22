@@ -21,39 +21,41 @@ In the meetings we had the opportunity to visualize all these tools, compare the
 
 In Juris only 10 case rulings appear in the search page, this amount should be costumizable as many users prefer to be able to scroll down through all of the case rulings available as you can in DGSI and ECLI.
 
-Implement a calendar feature to look up a specific date (feature already finished).
+Calendar feature to look up a specific date is important (feature already finished).
 
-Need to implement partial name field search capability
+Partial name field search capability does not exist
+
+Search should find case rulings containing all specified terms and not only some as it does currently
+
+Search should work even when terms are not in the correct order
 
 Implement simple regex string search for older case rulings
 
 Process number search needs Elastic Search implementation
 
-Search should work even when terms are not in the correct order
-
 Implement "AND" operator in term searches, possibly add "OR" operator
 
-Search should find case rulings containing all specified terms and not only some as it does currently
+"Area" field is redundant as "Section" handles everything automatically, make it so that selecting a section auto selects its area
 
-The current order of the existing metadata fields is unpratical. This can be modified already by users but some of the fields are found to be useless for both the librarians and judges and others for just one of them like "Área".
+The current order of the existing metadata fields is unpratical. This can be modified already by users but some of the fields are found to be useless for both the librarians and judges and others for just one of them like "Área". Below are the ideal metadata fields in the application:
 
 ### Ideal Metadata Field Order
 
-Número de acordão 
-Secção 
-Data 
-Relator 
-Meio Processual
+- Número de acordão 
+- Secção 
+- Data 
+- Relator 
+- Meio Processual
 
 ### Useless Fields
 
-Votaçãom
-Área (Useful for Judges)
-Meio processual (Important for the librarians useless for the judges)
-Jurisprudencia
-Decisao
-Fonte
-Estado
+- Votação
+- Área (Useful for Judges)
+- Meio processual (Important for the librarians useless for the judges)
+- Jurisprudencia
+- Decisao
+- Fonte
+- Estado
 
 ### Case Ruling Display
 There was also a lot of feedback regarding case ruling display,
@@ -70,7 +72,7 @@ For each case ruling, show in small format:
 
 Juris currently duplicates a case ruling once it is edited, this is a major bug to be fixed that compromises data normalization.
 
-Too many fields in the backoffice editing interface, make it more simple
+Too many fields in the backoffice editing interface, make it more intuitive for the users
 
 Add suggestiongs to the text boxes for the metadata filter editing
 
@@ -78,8 +80,11 @@ Too many descriptors, too much information
 
 Lotus Notes doesn't update all records
 
-"Area" field is redundant as "Section" handles everything automatically
+Statistics dashboard would be very interesting for the judges
 
+For search purposes, old descriptors should neither be marked nor completely removed
+
+For creation, only use current descriptors, not the complete list
 
 ## UI/UX Improvements
 
@@ -89,47 +94,8 @@ Show fewer case rulings in demonstration but always keep summary open. Summary i
 - Decision is not important for search purposes
 - Descriptors are of little interest for search
 
-
-
-## Additional Features
-- Statistics dashboard would be very interesting
-- For search purposes, old descriptors should neither be marked nor completely removed
-- For creation, only use current descriptors, not the complete list
+Other minor UI tweaks
 
 
 
 
-
-
-
-lotus n atualiza todos
-area nao faz sentido, seccao faz tudo automaticamente
-
-as 3 intruduçoes nao faz sentido, meter tudo num e fazer a produção no background
-
-numero convencional nao está presente
-
-copiar a ordem de descritor
-isto sao as notas da reuniao, pouco organizadas mas pronto fica registado ao menos
-
-
-
-
-aumentar ligeiramente o texto porque se sente dificuldade a ler acordãos por o texto ser pequeno
-
-ter menos acordaos em demonstração mas ter o sumário sempre aberto
-
-decisao nao é importante para pesquisa, pouco interesse nos descritores tambem mas o sumário é o mais importante
-
-pesquisa de acordãos que têm todos os termos em 
-pesquisa mesmo sem ser na ordem certa
-ter pelo menos um "and" em pesquisa de termos maybe usar um "not"
-
-no nr do processo nao tem elastic search e isso é frustrante
-na pesquisa procura de palavras nao completas nao está a ser encontrada, melhorar a pesquisa!!
-pesquisa por data é importante
-
-uteis:
-seccao
-descritores
-area
