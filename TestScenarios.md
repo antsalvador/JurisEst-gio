@@ -85,3 +85,21 @@
 |           | 3. Actor clicks “Save”                                                                               |
 |           | 4. System updates the record and confirms success                                                    |
 |           | 5. Actor refreshes the page and verifies the new values persist                                     |
+
+
+## Normalization Dashboard – "Normalize Duplicated Metadata Term"
+
+| Syntax    |                                                                                                     |
+|-----------|-----------------------------------------------------------------------------------------------------|
+| Name:     | <table id="normalize_metadata">Normalize similar metadata values</table>                             |
+| Scenario: | 1. Actor opens the Export/Import page                                                                |
+|           | 2. Actor selects "Descritores" from the metadata field dropdown in the normalization dashboard       |
+|           | 3. System displays clusters of similar terms with their frequencies                                  |
+|           | 4. Actor adjusts similarity threshold to 0.85                                                        |
+|           | 5. Actor selects irregular value "Direito Penal"                                                     |
+|           | 6. Actor selects target value "Direito Criminal" from dropdown                                       |
+|           | 7. Actor clicks "Normalizar" button                                                                  |
+|           | 8. System displays confirmation modal with affected document count                                   |
+|           | 9. Actor confirms normalization                                                                      |
+|           | 10. System performs bulk update and displays success message with document link                      |
+|           | 11. Actor verifies affected documents through provided link                                          |
