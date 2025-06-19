@@ -2,12 +2,17 @@
 # User Stories
 -------------
 1. As a user, I want to be able to select a specific date.
-2. As an admin, I want to be able view suggestions while editing case rulings, so I can be more effecient and ensure data normalization.
-3. As an admin, I want to filter and see only the records created since a specific date or time period, so I can track activity.
-4. As an admin, I want to be able to easily visualize abnormal data attributes, so I can investigate outliers.
-6. As an admin, I want to export to Excel exactly what I’m seeing in the dashboard, so I can analyze or share it externally.
-7. As an admin, I want to quickly edit any record from the dashboard list, so I can correct or update data efficiently.
-8. As an admin, I want to see a detailed report after importing an Excel file, so I know what was updated or added.
+2. As a user, I want to be able to use advanced logical search operators "AND", "OR" and "NOT, so I can browse case rulings more effectively.
+3. As a user, I want to be able to costumize the amount of case rulings showing at once, so I can scroll through the main page freely.
+4. 3. As a user, I want to be able to have a compact view of the case ruling so I can improve readibilty.
+5. As an admin, I want to be able view suggestions while editing case rulings, so I can be more effecient and ensure data normalization.
+6. As an admin, I want to filter and see only the records created since a specific date or time period, so I can track activity.
+7. As an admin, I want to export to Excel exactly what I’m seeing in the dashboard, so I can analyze or share it externally.
+9. As an admin, I want to identify similar or irregular metadata values across legal documents, so I can maintain data consistency.
+10. As an admin, I want to select a target value for normalization and see which documents will be affected before confirming.
+11. As an admin, I want to adjust the similarity threshold for term clustering, so I can fine-tune the detection of irregular values.
+12. 8. As an admin, I want to quickly edit any record from the dashboard list, so I can correct or update data efficiently.
+
 ---------------------------------------------------------------------------------------------------------
 
 # Use Cases
