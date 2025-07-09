@@ -17,20 +17,101 @@ In the meetings we had the opportunity to visualize all these tools, compare the
 
 ## Public Interface UI & features 
 
-Pagination: JURIS limits search results to 10 case rulings per page.
-➤ This should be customizable, allowing users to scroll through all available rulings (as in DGSI and ECLI).
-Date-based Filtering:
-➤ A calendar feature to search by exact date is essential — this has already been implemented.
-Partial Name Search:
-➤ Currently missing. Should allow partial matches in name fields.
-Search Logic Improvements:
-➤ JURIS should:
-Find case rulings containing all specified terms, not just some
-Support term matches even when word order is incorrect
-Implement simple regex string search to find older case rulings
-Support the "AND" operator (and potentially "OR") in term queries
-Process Number Search:
-➤ Needs to be implemented using Elasticsearch.
+# 📝 Interviews with STJ Employees
+
+**Summary of meetings held with employees of the Supremo Tribunal de Justiça (STJ):**
+
+- 📅 **May 14** – Interview with the **Library team**, led by André Capricho  
+- 📅 **May 15** – Interview with several **STJ judges**
+
+---
+
+## 📌 Overview
+
+### 📚 Library Team
+
+The Library team is responsible for:
+
+- Creating new case rulings assigned by the Court
+- Editing existing case rulings shown on JURIS
+
+They interact daily with the **JURIS back-office interface**.
+
+### ⚖️ STJ Judges
+
+The meeting with judges focused primarily on the **search and browsing experience** of JURIS.
+
+### 📤 Current Workflow
+
+The team receives new case rulings via **email**, typically as a **photo of a form** used by the courts. These forms include all metadata and a case summary.
+
+---
+
+## ❗ Key Finding
+
+Both the **librarians** and **judges** actively **avoid using JURIS**.
+
+> 💬 *"The interface is not practical or intuitive."*
+
+Instead, they use:
+
+- 🧾 **IBM Lotus Notes** – for creating and editing rulings  
+- 📚 **DGDSI** – the backend database JURIS fetches from  
+- 🌐 **ECLI (European Case Law Identifier)** – for case searches
+
+These tools offer a **better user experience**, both in functionality and usability.
+
+During the interviews, we observed how these tools work and compared them to JURIS to understand its shortcomings.
+
+---
+
+## ✅ Key Takeaways
+
+### 🔍 1. Search Functionality
+
+- **Result Limitations**:  
+  JURIS currently shows only **10 results per page**.  
+  ➤ This should be **customizable**, allowing users to **scroll through all results**, like in DGSI and ECLI.
+
+- **Calendar Filter**:  
+  A feature to **search by exact ruling date** is crucial.  
+  ✅ *This feature has already been implemented.*
+
+- **Partial Name Search**:  
+  ➤ Add support for **partial matches** in name fields.
+
+- **Improved Term Matching**:  
+  ➤ Enhance search to:
+  - Find results with **all specified terms**
+  - Match terms **regardless of order**
+  - Support **simple regex search** (useful for legacy rulings)
+
+- **Boolean Operators**:  
+  ➤ Add support for:
+  - `"AND"` operator (must-have)  
+  - `"OR"` operator (nice-to-have)
+
+- **Process Number Search**:  
+  ➤ Needs to be implemented using **Elasticsearch**.
+
+### 🧾 2. Field Redundancy
+
+- **"Area" Field**:  
+  ➤ Currently redundant — the selected **"Section"** already determines the area.  
+  ➤ Improve UX by **automatically selecting the "Area"** when a section is chosen.
+
+---
+
+## 📷 Tools Observed
+
+During the meetings, the following tools were demonstrated and discussed:
+
+| Tool           | Purpose                              |
+|----------------|--------------------------------------|
+| **Lotus Notes**| Creating and editing case rulings    |
+| **DGDSI**      | Primary case law database            |
+| **ECLI**       | Advanced search for legal documents  |
+| **JURIS**      | Current system (underutilized)       |
 
 ### Ideal Metadata Field Order
 
