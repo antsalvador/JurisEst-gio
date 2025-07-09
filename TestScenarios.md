@@ -7,7 +7,7 @@
 | Name:     | <table id="export_filtered_data">Export filtered data to Excel</table>                               |
 | Scenario: | 1. Admin opens the export dashboard page                                                             |
 |           | 2. Admin selects a date range filter (e.g., “since 2024-01-01”)                                      |
-|           | 3. Admin selects a rare attribute filter (e.g., “Meio Processual: UnusualType”)                      |
+|           | 3. Admin selects a rare attribute filter (e.g., “Meio Processual:”)                                  |
 |           | 4. System displays a list of records matching the filters                                            |
 |           | 5. Admin clicks the “Export to Excel” button                                                         |
 |           | 6. System generates and downloads an Excel file                                                      |
