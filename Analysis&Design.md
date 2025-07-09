@@ -79,13 +79,13 @@ For export: sends selected fields as query params.
 ![ExportSequenceDiagram.png](ExportSequenceDiagram.png)
 
 
-# Export Page Enhancements – Feature Overview & Implementation Plan
+# Data Related Enhancements – Feature Overview & Implementation Plan
 
 To increase the utility of the Export page, a set of analytical and interactive enhancements will be introduced. With added analytics and administrative filtering, it will evolve into a diagnostic and quality assurance dashboard for managing the Juris dataset.
 
 ### Data Totals Over Time
 
-The first planned feature is a dashboard that visualizes how many records exist and how many were added over a given time range.
+The first planned feature is a dashboard that allows users to visualize how certain records evolve over time filtering by their metadata fields, time period and other nuances.
 
 - Objective: Display total records and new records since a selected date.
 - Backend: API endpoint (`/api/analytics/created-over-time`) providing counts grouped by creation date (daily, weekly, monthly).
@@ -96,7 +96,7 @@ The first planned feature is a dashboard that visualizes how many records exist 
 
 ### Rare Value Insights
 
-Another planned enhancement is a tool to surface rare or uncommon metadata entries that can possibly be data normalization issues.
+Another planned enhancement is a tool to surface rare or uncommon metadata entries that can possibly be data normalization issues or interesting insights.
 - Objective: Identify uncommon or specific attribute values 
 - Backend: API endpoint (`/api/analytics/rare-values?field=Tipo`) returning sorted value counts.
 - Frontend: Attribute selector (dropdown) with chart or list of rare values.
