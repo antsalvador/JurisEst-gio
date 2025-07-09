@@ -1,4 +1,4 @@
-# Interviews with STJ employees
+# 📝 Interviews with STJ Employees
 
 Summary of the the meetings with different employees of the Supremo Tribunal de Justiça undertaken on the 14th of May with the Library team and 15th of May with STJ judges. 
 
@@ -12,62 +12,7 @@ Instead the team currently uses IBM's Lotus Notes for creating and editing the c
 
 In the meetings we had the opportunity to visualize all these tools, compare them to Juris and discuss what causes the team not to use it. 
 
-# These are the biggest takeways:
- 
-
-## Public Interface UI & features 
-
-# 📝 Interviews with STJ Employees
-
-**Summary of meetings held with employees of the Supremo Tribunal de Justiça (STJ):**
-
-- 📅 **May 14** – Interview with the **Library team**, led by André Capricho  
-- 📅 **May 15** – Interview with several **STJ judges**
-
----
-
-## 📌 Overview
-
-### 📚 Library Team
-
-The Library team is responsible for:
-
-- Creating new case rulings assigned by the Court
-- Editing existing case rulings shown on JURIS
-
-They interact daily with the **JURIS back-office interface**.
-
-### ⚖️ STJ Judges
-
-The meeting with judges focused primarily on the **search and browsing experience** of JURIS.
-
-### 📤 Current Workflow
-
-The team receives new case rulings via **email**, typically as a **photo of a form** used by the courts. These forms include all metadata and a case summary.
-
----
-
-## ❗ Key Finding
-
-Both the **librarians** and **judges** actively **avoid using JURIS**.
-
-> 💬 *"The interface is not practical or intuitive."*
-
-Instead, they use:
-
-- 🧾 **IBM Lotus Notes** – for creating and editing rulings  
-- 📚 **DGDSI** – the backend database JURIS fetches from  
-- 🌐 **ECLI (European Case Law Identifier)** – for case searches
-
-These tools offer a **better user experience**, both in functionality and usability.
-
-During the interviews, we observed how these tools work and compared them to JURIS to understand its shortcomings.
-
----
-
-## ✅ Key Takeaways
-
-### 🔍 1. Search Functionality
+### Public Interface 
 
 - **Result Limitations**:  
   JURIS currently shows only **10 results per page**.  
