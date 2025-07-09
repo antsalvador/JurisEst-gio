@@ -15,27 +15,22 @@ In the meetings we had the opportunity to visualize all these tools, compare the
 # These are the biggest takeways:
  
 
-## Search Functionality
+## Public Interface UI & features 
 
-In Juris only 10 case rulings appear in the search page, this amount should be costumizable as many users prefer to be able to scroll down through all of the case rulings available as you can in DGSI and ECLI.
-
-Calendar feature to look up a specific date is important (feature already finished).
-
-Partial name field search capability does not exist
-
-Search should find case rulings containing all specified terms and not only some as it does currently
-
-Search should work even when terms are not in the correct order
-
-Implement simple regex string search for older case rulings
-
-Process number search needs Elastic Search implementation
-
-Implement "AND" operator in term searches, possibly add "OR" operator
-
-"Area" field is redundant as "Section" handles everything automatically, make it so that selecting a section auto selects its area
-
-The current order of the existing metadata fields is unpratical. This can be modified already by users but some of the fields are found to be useless for both the librarians and judges and others for just one of them like "Área". Below are the ideal metadata fields in the application:
+Pagination: JURIS limits search results to 10 case rulings per page.
+➤ This should be customizable, allowing users to scroll through all available rulings (as in DGSI and ECLI).
+Date-based Filtering:
+➤ A calendar feature to search by exact date is essential — this has already been implemented.
+Partial Name Search:
+➤ Currently missing. Should allow partial matches in name fields.
+Search Logic Improvements:
+➤ JURIS should:
+Find case rulings containing all specified terms, not just some
+Support term matches even when word order is incorrect
+Implement simple regex string search to find older case rulings
+Support the "AND" operator (and potentially "OR") in term queries
+Process Number Search:
+➤ Needs to be implemented using Elasticsearch.
 
 ### Ideal Metadata Field Order
 
